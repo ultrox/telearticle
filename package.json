@@ -1,0 +1,32 @@
+{
+  "name": "@ma.vu/telearticle",
+  "version": "1.0.0",
+  "description": "Telegram bot responding which-article is the word",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["index.js", "start.js"],
+  "main": "index.js",
+  "dependencies": {
+    "@ma.vu/which-article": "^1.0.1",
+    "array-to-sentence": "^2.0.0",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "telegraf": "^3.27.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node start.js",
+    "deploy": "git push heroku master",
+    "sync": "./sync",
+    "local": "heroku local web",
+    "logs": "heroku logs",
+    "logs:follow": "npm run logs -- --tail"
+  },
+  "keywords": [],
+  "author": "Marko Vujanic",
+  "license": "MIT"
+}

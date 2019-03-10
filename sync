@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+source variables.env
+# setting token as variable for heroku env
+heroku config:set BOT_TOKEN=$BOT_TOKEN
+
+HEROKU_URL="$(heroku apps:info -s  | grep web_url | cut -d= -f2)heroku"
+echo $HEROKU_URL
+BOT="https://api.telegram.org/bot$BOT_TOKEN/setWebhook"
+curl -F "url=$HEROKU_URL" $BOT 
